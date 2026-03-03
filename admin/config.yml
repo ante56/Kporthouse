@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "apartments"
+    label: "Apartmani"
+    files:
+      - file: "data/apartments.json"
+        label: "Lista apartmana"
+        name: "apartments_list"
+        fields:
+          - label: "Apartmani"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Naziv", name: "title", widget: "string" }
+              - { label: "Slika (URL)", name: "image", widget: "string" }
+              - { label: "Ocjena / tekst", name: "ratingText", widget: "string", required: false }
+              - { label: "Airbnb link", name: "airbnbUrl", widget: "string" }
