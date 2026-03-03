@@ -1,11 +1,262 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="hr">
 <head>
-  <meta charset="UTF-8">
-  <title>Kporthouse</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>K Port House – Rogoznica Luxury Living</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+  margin:0;
+  font-family:'Inter', sans-serif;
+  background:#000;
+  color:#fff;
+}
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
+
+header{
+  position:fixed;
+  width:100%;
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(10px);
+  padding:20px 0;
+  z-index:1000;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  letter-spacing:4px;
+  font-size:14px;
+}
+
+.menu a{
+  margin-left:30px;
+  text-decoration:none;
+  color:#fff;
+  font-size:14px;
+}
+
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(to bottom,#000,#111);
+}
+
+.hero h1{
+  font-family:'Playfair Display', serif;
+  font-size:70px;
+  font-weight:300;
+  margin-bottom:20px;
+}
+
+.hero p{
+  color:#ccc;
+  font-size:20px;
+  margin-bottom:30px;
+}
+
+.btn-primary{
+  background:#fbbf24;
+  padding:15px 35px;
+  border-radius:50px;
+  color:#000;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.section{
+  padding:120px 20px;
+  text-align:center;
+}
+
+.section h2{
+  font-family:'Playfair Display', serif;
+  font-size:45px;
+  font-weight:300;
+  margin-bottom:60px;
+}
+
+.cards{
+  display:flex;
+  gap:30px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.card{
+  background:#111;
+  padding:30px;
+  border-radius:25px;
+  width:320px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.6);
+}
+
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:20px;
+  margin-bottom:20px;
+}
+
+.card button{
+  background:#fff;
+  color:#000;
+  padding:10px 20px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+}
+
+.pricing{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.pricing div{
+  background:#000;
+  padding:30px 50px;
+  border-radius:30px;
+  border:1px solid #333;
+}
+
+.review-box{
+  background:#111;
+  padding:30px;
+  border-radius:25px;
+  margin-bottom:20px;
+}
+
+footer{
+  padding:40px;
+  text-align:center;
+  border-top:1px solid #222;
+  color:#777;
+}
+
+.floating{
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.floating a{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:24px;
+  color:#fff;
+}
+
+.wa{ background:#25D366; }
+.ig{ background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7); }
+
+</style>
 </head>
+
 <body>
-  <h1>Kporthouse</h1>
-  <p>Stranica radi.</p>
+
+<header>
+  <div class="container nav">
+    <div class="logo">K PORT HOUSE</div>
+    <div class="menu">
+      <a href="#apartmani">Apartmani</a>
+      <a href="#recenzije">Recenzije</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Rogoznica Luxury Living</h1>
+    <p>Boutique iskustvo uz more. Privatnost. Elegancija. Zalazak sunca.</p>
+    <a href="#kontakt" class="btn-primary">Rezerviraj boravak</a>
+  </div>
+</section>
+
+<section id="apartmani" class="section">
+  <h2>Naši apartmani</h2>
+  <div class="cards">
+
+    <div class="card">
+      <img src="https://a0.muscache.com/im/pictures/ee1151b3-d6f9-47c9-8fe1-ad91d539471b.jpg?im_w=1200">
+      <h3>Apartman P2</h3>
+      <p>★★★★★ 5.0 · 92 recenzije</p>
+      <a href="https://hr.airbnb.com/rooms/43576465" target="_blank">
+        <button>Pogledaj na Airbnb-u</button>
+      </a>
+    </div>
+
+    <div class="card">
+      <img src="https://a0.muscache.com/im/pictures/c7e029a4-7f0c-48b5-80ed-2a2d89eb2673.jpg?im_w=1200">
+      <h3>Apartman P3</h3>
+      <p>★★★★★ 4.96 · 24 recenzije</p>
+      <a href="https://hr.airbnb.com/rooms/43626220" target="_blank">
+        <button>Pogledaj na Airbnb-u</button>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<section id="recenzije" class="section">
+  <h2>Recenzije</h2>
+
+  <div class="review-box">
+    <p><strong>P2</strong> – Prosječna ocjena 5.0 (92 recenzije)</p>
+    <a href="https://hr.airbnb.com/rooms/43576465" target="_blank">Pročitaj recenzije →</a>
+  </div>
+
+  <div class="review-box">
+    <p><strong>P3</strong> – Prosječna ocjena 4.96 (24 recenzije)</p>
+    <a href="https://hr.airbnb.com/rooms/43626220" target="_blank">Pročitaj recenzije →</a>
+  </div>
+
+</section>
+
+<section id="kontakt" class="section">
+  <h2>Kontakt</h2>
+  <p>📞 +385 XX XXX XXXX</p>
+  <p>✉ info@kporthouse.hr</p>
+  <p>📍 Rogoznica, Hrvatska</p>
+</section>
+
+<footer>
+  © 2026 K Port House – Luxury Apartments
+</footer>
+
+<div class="floating">
+  <a href="https://wa.me/385XXXXXXXXX" target="_blank" class="wa">💬</a>
+  <a href="https://instagram.com/tvojprofil" target="_blank" class="ig">⌁</a>
+</div>
+
 </body>
 </html>
