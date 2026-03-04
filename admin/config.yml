@@ -17,20 +17,16 @@ collections:
             name: "items"
             widget: "list"
             fields:
-              - label: "Naziv"
-                name: "title"
-                widget: "string"
+              - { label: "Naziv", name: "title", widget: "string" }
 
-              - label: "Slika"
-                name: "image"
-                widget: "image"
-                choose_url: false
+              - { label: "Slug (npr p1, p2)", name: "slug", widget: "string" }
 
-              - label: "Ocjena / tekst"
-                name: "ratingText"
-                widget: "string"
-                required: false
+              - label: "Slike (više)"
+                name: "images"
+                widget: "list"
+                field:
+                  { label: "Slika", name: "image", widget: "image", choose_url: false }
 
-              - label: "Airbnb link"
-                name: "airbnbUrl"
-                widget: "string"
+              - { label: "Ocjena / tekst", name: "ratingText", widget: "string", required: false }
+
+              - { label: "Airbnb link", name: "airbnbUrl", widget: "string" }
