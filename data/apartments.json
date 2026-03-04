@@ -1,22 +1,31 @@
 {
   "items": [
     {
+      "slug": "p1",
       "title": "Apartman P1",
-      "airbnbUrl": "airbnb.com/h/kporthousep1",
-      "image": "/uploads/0b2cabaf-f8cc-476a-8f15-7bfd9038febf.jpg",
-      "ratingText": "P1- Prosječna ocjena 4.99 (72 recenzije)"
+      "ratingText": "★★★★★ 4.99 · 72 recenzije",
+      "airbnbUrl": "https://airbnb.com/h/kporthousep1",
+      "images": [
+        "/uploads/0b2cabaf-f8cc-476a-8f15-7bfd9038febf.jpg"
+      ]
     },
     {
+      "slug": "p2",
       "title": "Apartman P2",
-      "image": "https://...",
       "ratingText": "★★★★★ 5.0 · 92 recenzije",
-      "airbnbUrl": "https://..."
+      "airbnbUrl": "https://hr.airbnb.com/rooms/43576465",
+      "images": [
+        "https://a0.muscache.com/im/pictures/ee1151b3-d6f9-47c9-8fe1-ad91d539471b.jpg?im_w=1200"
+      ]
     },
     {
+      "slug": "p3",
       "title": "Apartman P3",
-      "image": "https://...",
       "ratingText": "★★★★★ 4.96 · 24 recenzije",
-      "airbnbUrl": "https://..."
+      "airbnbUrl": "https://hr.airbnb.com/rooms/43626220",
+      "images": [
+        "https://a0.muscache.com/im/pictures/c7e029a4-7f0c-48b5-80ed-2a2d89eb2673.jpg?im_w=1200"
+      ]
     }
   ]
 }
