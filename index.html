@@ -282,5 +282,44 @@ loadApartments();
 
 loadApartments();
 </script>
+  <script>
+async function loadApartments() {
+  const grid = document.getElementById("apartmentsGrid");
+  if (!grid) return;
+
+  try {
+    const res = await fetch("/data/apartments.json?v=" + Date.now());
+    if (!res.ok) throw new Error("Ne mogu učitati JSON: " + res.status);
+
+    const data = await res.json();
+    const items = data.items || [];
+
+    grid.innerHTML = items.map(a => {
+      const cover = (a.images && a.images[0]) ? a.images[0] : (a.image || "");
+      const slug = a.slug || "";
+      const airbnb = a.airbnbUrl || "";
+
+      return `
+        <div class="card">
+          <a href="/apartment.html?slug=${encodeURIComponent(slug)}" style="text-decoration:none;color:inherit;">
+            ${cover ? `<img src="${cover}" alt="${a.title || ''}">` : ``}
+            <h3>${a.title || ''}</h3>
+            <p>${a.ratingText || ''}</p>
+          </a>
+          ${airbnb ? `
+            <a href="${airbnb}" target="_blank" rel="noopener">
+              <button>Pogledaj na Airbnb-u</button>
+            </a>
+          ` : ``}
+        </div>
+      `;
+    }).join("");
+  } catch (e) {
+    grid.innerHTML = `<p style="color:#ccc;">Greška: ${e.message}</p>`;
+  }
+}
+
+loadApartments();
+</script>
 </body>
 </html>
