@@ -1,52 +1,94 @@
 <!DOCTYPE html>
 <html lang="hr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Apartman</title>
-  <link rel="stylesheet" href="/styles.css">
-  <style>
-    .gallery { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-    .gallery img { width:100%; height:220px; object-fit:cover; border-radius:16px; }
-    .wrap { max-width: 1100px; margin: 0 auto; padding: 24px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apartman</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#000;
+color:#fff;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:20px;
+}
+
+.back{
+margin-bottom:30px;
+display:inline-block;
+color:#fff;
+text-decoration:none;
+}
+
+h1{
+margin-bottom:30px;
+}
+</style>
 </head>
+
 <body>
-  <div class="wrap">
-    <p><a href="/">← Nazad</a></p>
-    <h1 id="title"></h1>
-    <p id="rating"></p>
-    <p><a id="airbnb" target="_blank" rel="noopener">Pogledaj na Airbnb-u</a></p>
 
-    <div id="gallery" class="gallery"></div>
-  </div>
+<div class="container">
 
-  <script>
-    async function loadApartment() {
-      const params = new URLSearchParams(location.search);
-      const slug = params.get('slug');
+<a href="/" class="back">← Nazad</a>
 
-      const res = await fetch('/data/apartments.json', { cache: "no-store" });
-      const data = await res.json();
-      const items = data.items || [];
+<h1 id="title"></h1>
+<p id="rating"></p>
 
-      const a = items.find(x => x.slug === slug);
-      if (!a) {
-        document.getElementById('title').textContent = 'Apartman nije pronađen';
-        return;
-      }
+<div class="gallery" id="gallery"></div>
 
-      document.getElementById('title').textContent = a.title;
-      document.getElementById('rating').textContent = a.ratingText || '';
-      const air = document.getElementById('airbnb');
-      air.href = a.airbnbUrl;
+</div>
 
-      const gallery = document.getElementById('gallery');
-      const imgs = a.images || [];
-      gallery.innerHTML = imgs.map(src => `<img src="${src}" alt="${a.title}">`).join('');
-    }
+<script>
 
-    loadApartment();
-  </script>
+async function loadApartment(){
+
+const params = new URLSearchParams(window.location.search);
+const slug = params.get("slug");
+
+const res = await fetch("/data/apartments.json");
+const data = await res.json();
+
+const apartment = data.items.find(a => a.slug === slug);
+
+if(!apartment){
+document.getElementById("title").innerText="Apartman nije pronađen";
+return;
+}
+
+document.getElementById("title").innerText=apartment.title;
+document.getElementById("rating").innerText=apartment.ratingText || "";
+
+const gallery=document.getElementById("gallery");
+
+gallery.innerHTML=(apartment.images || []).map(img => `
+<img src="${img}">
+`).join("");
+
+}
+
+loadApartment();
+
+</script>
+
 </body>
 </html>
