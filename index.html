@@ -251,8 +251,34 @@ footer{
     }
   }
 
-  loadApartments();
-</script>
+ <script>
+async function loadApartments() {
 
+const res = await fetch("/data/apartments.json");
+const data = await res.json();
+const items = data.items || [];
+
+const grid = document.getElementById("apartmentsGrid");
+
+grid.innerHTML = items.map(a => `
+<div class="card">
+
+<a href="/apartment.html?slug=${a.slug}" style="text-decoration:none;color:inherit;">
+<img src="${(a.images && a.images[0]) ? a.images[0] : ''}">
+<h3>${a.title}</h3>
+<p>${a.ratingText || ""}</p>
+</a>
+
+<a href="${a.airbnbUrl}" target="_blank">
+<button>Pogledaj na Airbnb-u</button>
+</a>
+
+</div>
+`).join("");
+
+}
+
+loadApartments();
+</script>
 </body>
 </html>
