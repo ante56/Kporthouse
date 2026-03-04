@@ -11,6 +11,12 @@
       "image": "https://...",
       "ratingText": "★★★★★ 4.96 · 24 recenzije",
       "airbnbUrl": "https://..."
+    },
+    {
+      "title": "Apartman P1",
+      "airbnbUrl": "airbnb.com/h/kporthousep1",
+      "image": "/uploads/1649c446-c06b-4557-887c-0a1a8d6f34f4.jpg",
+      "ratingText": "P1- Prosječna ocjena 4.99 (72 recenzije)"
     }
   ]
 }
